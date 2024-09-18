@@ -16,56 +16,27 @@
 
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'infinite-scroll': 'infinite-scroll 25s linear infinite',
+                    },
+                    keyframes: {
+                        'infinite-scroll': {
+                            from: { transform: 'translateX(0)' },
+                            to: { transform: 'translateX(-100%)' },
+                        }
+                    }                    
+                }
+            }
+        }
+    </script>
   <style>
     .font-poppins {
       font-family: "Poppins", sans-serif;
     }
-    @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(calc(-250px * 7));
-            }
-        }
-        .slider {
-            background: #EEEEEE;
-            height: 100px;
-            margin: auto;
-            overflow: hidden;
-            position: relative;
-            width: 100%;
-        }
-        .slider::before,
-        .slider::after {
-            background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
-            content: "";
-            height: 100px;
-            position: absolute;
-            width: 200px;
-            z-index: 2;
-        }
-        .slider::after {
-            right: 0;
-            top: 0;
-            transform: rotateZ(180deg);
-        }
-        .slider::before {
-            left: 0;
-            top: 0;
-        }
-        .slider .slide-track {
-            animation: scroll 40s linear infinite;
-            display: flex;
-            width: calc(250px * 14);
-        }
-        .slider .slide {
-            height: 100px;
-            width: 250px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
   </style>
 </head>
 
@@ -73,7 +44,7 @@
   <!-- Header Section  -->
   <header>
     <nav>
-      <div class="navbar bg-[#EEEEEE] p-3 px-16">
+      <div class="navbar bg-[#EEEEEE] p-3 px-8 lg:px-16">
 
         <!-- Logo Section -->
         <div class="flex-1">
@@ -94,7 +65,7 @@
         </div>
 
         <!-- Hamburger Menu for mobile screens -->
-        <div class="dropdown dropdown-end border-2 rounded-full lg:hidden">
+        <div class="dropdown dropdown-end lg:hidden">
           <div tabindex="0" role="button" class="btn btn-ghost">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
               stroke="currentColor">
@@ -161,10 +132,10 @@
 
     <!-- Find Now Section  -->
     <section>
-      <div class="flex flex-col lg:flex-row justify-between items-center px-4 py-10 lg:px-0 bg-[#EEEEEE]">
+      <div class="flex flex-col lg:flex-row justify-around items-center px-4 py-10 lg:px-0 bg-[#EEEEEE]">
 
         <!-- Find Text -->
-        <div class="lg:w-2/3 mb-6 lg:mb-0 lg:px-28">
+        <div class="lg:w-2/3 mb-6 lg:mb-0">
           <h1 class="text-3xl lg:text-3xl font-bold text-gray-900 lg:leading-[4rem]">
             Find and contact 17,814 top Dev agencies in one place
           </h1>
@@ -175,7 +146,7 @@
         </div>
 
         <!-- Find Button -->
-        <div class="w-3/4 lg:w-auto lg:pr-20">
+        <div class="w-full lg:w-auto lg:pr-20">
           <button
             class="btn btn-outline px-6 py-2 rounded-md flex items-center shadow-lg justify-center w-full lg:w-auto">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24"
@@ -897,158 +868,96 @@
 
     <!-- Logos  -->
     <section>
-      <div class="slider">
-        <div class="slide-track">
-            <div class="slide">
-                <img src="images/Gong.png" alt="Gong" height="50" width="auto">
-            </div>
-            <div class="slide">
-                <img src="images/automattic.png" alt="Automattic" height="50" width="auto">
-            </div>
-            <div class="slide">
-                <img src="images/Hashicorp.png" alt="Hashicorp" height="50" width="auto">
-            </div>
-            <div class="slide">
-                <img src="images/activecampaign.png" alt="ActiveCampaign" height="50" width="auto">
-            </div>
-            <div class="slide">
-                <img src="images/evernote.png" alt="Evernote" height="50" width="auto">
-            </div>
-            <div class="slide">
-                <img src="images/pipedrive.png" alt="Pipedrive" height="50" width="auto">
-            </div>
-            <div class="slide">
-                <img src="images/Airwales.png" alt="Airwallex" height="50" width="auto">
-            </div>
-            <!-- Duplicate slides for seamless looping -->
-            <div class="slide">
-                <img src="images/Gong.png" alt="Gong" height="50" width="auto">
-            </div>
-            <div class="slide">
-                <img src="images/automattic.png" alt="Automattic" height="50" width="auto">
-            </div>
-            <div class="slide">
-                <img src="images/Hashicorp.png" alt="Hashicorp" height="50" width="auto">
-            </div>
-            <div class="slide">
-                <img src="images/activecampaign.png" alt="ActiveCampaign" height="50" width="auto">
-            </div>
-            <div class="slide">
-                <img src="images/evernote.png" alt="Evernote" height="50" width="auto">
-            </div>
-            <div class="slide">
-                <img src="images/pipedrive.png" alt="Pipedrive" height="50" width="auto">
-            </div>
-            <div class="slide">
-                <img src="images/Airwales.png" alt="Airwallex" height="50" width="auto">
-            </div>
+      <div class="my-16 relative flex overflow-x-hidden bg-[#EEEEEE]">
+        <div class="py-12 animate-infinite-scroll flex space-x-12 sm:space-x-16 md:space-x-24 lg:space-x-32">
+            <img src="images/Gong.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="Gong">
+            <img src="images/automattic.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="Automattic">
+            <img src="images/Hashicorp.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="Hashicorp">
+            <img src="images/activecampaign.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="ActiveCampaign">
+            <img src="images/evernote.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="Evernote">
+            <img src="images/pipedrive.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="Pipedrive">
+            <img src="images/Airwales.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="Airwallex">
+        </div>
+        <div class="py-12 animate-infinite-scroll flex space-x-12 sm:space-x-16 md:space-x-24 lg:space-x-32">
+            <img src="images/Gong.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="Gong">
+            <img src="images/automattic.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="Automattic">
+            <img src="images/Hashicorp.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="Hashicorp">
+            <img src="images/activecampaign.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="ActiveCampaign">
+            <img src="images/evernote.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="Evernote">
+            <img src="images/pipedrive.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="Pipedrive">
+            <img src="images/Airwales.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="Airwallex">
         </div>
     </div>
   </section>
 
     <!-- Clients  -->
-    <section>
-      <div class="flex justify-between items-center mt-20 mb-10">
-        <div class="lg:w-2/3">
-          <h1 class="text-3xl lg:px-28 mb-4 font-bold text-gray-900 lg:text-4xl">What Our Clients Say</h1>
-        </div>
+    <section class="bg-white py-12 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+          <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-8 text-center">
+              What Our Clients Say
+          </h2>
+          <div class="review-grid grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              <!-- Review 1 -->
+              <div class="bg-[#EEEEEE] rounded-lg shadow-md overflow-hidden">
+                  <div class="p-6">
+                      <div class="flex items-center mb-4">
+                          <img class="h-12 w-12 rounded-full mr-4" src="images/review1.png" alt="Janis Reeves">
+                          <div>
+                              <h3 class="text-lg font-semibold text-gray-900">Janis Reeves</h3>
+                              <p class="text-sm text-gray-600">Coala</p>
+                          </div>
+                      </div>
+                      <div class="flex text-yellow-400 mb-2">
+                          ★★★★<span class="text-gray-300">★</span>
+                      </div>
+                      <p class="text-gray-700">As a small business owner, finding the right partners for various projects has always been a challenge. This website has been a game-changer! The categorization makes it easy to find exactly what you're looking for, and the quality of professionals listed is top-notch.</p>
+                  </div>
+              </div>
+
+              <!-- Review 2 -->
+              <div class="bg-[#EEEEEE] rounded-lg shadow-md overflow-hidden">
+                  <div class="p-6">
+                      <div class="flex items-center mb-4">
+                          <img class="h-12 w-12 rounded-full mr-4" src="images/review2.png" alt="Francis Guzman">
+                          <div>
+                              <h3 class="text-lg font-semibold text-gray-900">Francis Guzman</h3>
+                              <p class="text-sm text-gray-600">Metademy</p>
+                          </div>
+                      </div>
+                      <div class="flex text-yellow-400 mb-2">
+                          ★★★★★
+                      </div>
+                      <p class="text-gray-700">As a marketing consultant, I often need to bring in specialists for various projects. Whether I need a graphic designer, a content writer, or a SEO expert, I can always find high-quality professionals here. The platform is user-friendly and has saved me countless hours of searching and vetting.</p>
+                  </div>
+              </div>
+
+              <!-- Review 3 -->
+              <div class="bg-[#EEEEEE] rounded-lg shadow-md overflow-hidden">
+                  <div class="p-6">
+                      <div class="flex items-center mb-4">
+                          <img class="h-12 w-12 rounded-full mr-4" src="images/review1.png" alt="Arthur Morgan">
+                          <div>
+                              <h3 class="text-lg font-semibold text-gray-900">Arthur Morgan</h3>
+                              <p class="text-sm text-gray-600">Outlaw</p>
+                          </div>
+                      </div>
+                      <div class="flex text-yellow-400 mb-2">
+                          ★★★★<span class="text-gray-300">★</span>
+                      </div>
+                      <p class="text-gray-700">I'm amazed by the range of services available on this platform! As someone working in the creative industry, I've used it to find everything from UX designers to video production teams. It's like having a rolodex of top-tier professionals at your fingertips.</p>
+                  </div>
+              </div>
+          </div>
       </div>
-
-      <div class="container mx-auto px-28 max-w-max mb-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Review 1 -->
-          <div class="border-2 card bg-[#EEEEEE] shadow-xl">
-            <div class="card-body">
-              <div class="flex items-center space-x-4">
-                <div class="avatar">
-                  <div class="w-16 rounded-full">
-                    <img src="images/review1.png" alt="Client 1" />
-                  </div>
-                </div>
-                <div>
-                  <h3 class="card-title">Janis Reeves</h3>
-                  <p class="text-md font-bold opacity-60">Coala</p>
-                </div>
-              </div>
-              <div class="rating flex">
-                <span class="text-orange-400 text-2xl">★</span>
-                <span class="text-orange-400 text-2xl">★</span>
-                <span class="text-orange-400 text-2xl">★</span>
-                <span class="text-orange-400 text-2xl">★</span>
-                <span class="text-gray-300 text-2xl">★</span>
-              </div>
-              <p class="text-md mt-4">As a small business owner, finding the right partners for various projects has
-                always been a challenge. This website has been a game-changer! The categorization makes it easy to find
-                exactly what you're looking for, and the quality of professionals listed is top-notch.</p>
-            </div>
-          </div>
-
-          <!-- Review 2 -->
-          <div class="border-2 card bg-[#EEEEEE] shadow-xl">
-            <div class="card-body">
-              <div class="flex items-center space-x-4">
-                <div class="avatar">
-                  <div class="w-16 rounded-full">
-                    <img src="images/review2.png" alt="Client 2" />
-                  </div>
-                </div>
-                <div>
-                  <h3 class="card-title">Francis Guzman</h3>
-                  <p class="text-md font-bold opacity-60">Metademy</p>
-                </div>
-              </div>
-              <div class="rating flex">
-                <span class="text-orange-400 text-2xl">★</span>
-                <span class="text-orange-400 text-2xl">★</span>
-                <span class="text-orange-400 text-2xl">★</span>
-                <span class="text-orange-400 text-2xl">★</span>
-                <span class="text-orange-400 text-2xl">★</span>
-
-              </div>
-              <p class="text-md mt-4">As a marketing consultant, I often need to bring in specialists for various
-                projects. Whether I need a graphic designer, a content writer, or a SEO expert, I can always find
-                high-quality professionals here. The platform is user-friendly and has saved me countless hours of
-                searching and vetting.</p>
-            </div>
-          </div>
-
-          <!-- Review 3 -->
-          <div class="border-2 card bg-[#EEEEEE] shadow-xl">
-            <div class="card-body">
-              <div class="flex items-center space-x-4">
-                <div class="avatar">
-                  <div class="w-16 rounded-full">
-                    <img src="images/review1.png" alt="Client 3" />
-                  </div>
-                </div>
-                <div>
-                  <h3 class="card-title">Arthur Morgan</h3>
-                  <p class="text-md font-bold opacity-60">Outlaw</p>
-                </div>
-              </div>
-              <div class="rating flex">
-                <span class="text-orange-400 text-2xl">★</span>
-                <span class="text-orange-400 text-2xl">★</span>
-                <span class="text-orange-400 text-2xl">★</span>
-                <span class="text-orange-400 text-2xl">★</span>
-                <span class="text-gray-300 text-2xl">★</span>
-              </div>
-              <p class="text-md mt-4">I'm amazed by the range of services available on this platform! As someone working
-                in the creative industry, I've used it to find everything from UX designers to video production teams.
-                It's like having a rolodex of top-tier professionals at your fingertips.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+  </section>
   </main>
 
 
   <!-- Footer Section -->
-  <footer class="footer text-base-content px-28 py-16">
+  <footer class="footer text-base-content px-8 py-16 lg:px-28">
     <form>
       <img class="h-16 mb-2" src="images/Logo.png" alt="">
-      <fieldset class="form-control w-80">
+      <fieldset class="form-control w-full">
         <label class="label">
           <span class="label-text mb-2">Join our newsletter to stay up to date on features and agency.</span>
         </label>
@@ -1101,7 +1010,7 @@
     </nav>
   </footer>
   <hr class="border-3 border-gray-500 w-[89%] mx-auto">
-  <footer class="footer bg-white items-center text-lg px-28 py-8">
+  <footer class="footer bg-white items-center text-lg px-8 py-16 lg:px-28">
     <aside class="grid-flow-col items-center">
       <p>© 2024 Best Dev Shop. All right reserved</p>
     </aside>

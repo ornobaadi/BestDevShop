@@ -17,22 +17,22 @@
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    animation: {
-                        'infinite-scroll': 'infinite-scroll 25s linear infinite',
-                    },
-                    keyframes: {
-                        'infinite-scroll': {
-                            from: { transform: 'translateX(0)' },
-                            to: { transform: 'translateX(-100%)' },
-                        }
-                    }                    
-                }
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            'infinite-scroll': 'infinite-scroll 25s linear infinite',
+          },
+          keyframes: {
+            'infinite-scroll': {
+              from: { transform: 'translateX(0)' },
+              to: { transform: 'translateX(-100%)' },
             }
+          }
         }
-    </script>
+      }
+    }
+  </script>
   <style>
     .font-poppins {
       font-family: "Poppins", sans-serif;
@@ -92,12 +92,11 @@
   <!-- Main Section  -->
   <main>
     <!-- Banner Section  -->
-    <section>
-      <div class="container mx-auto px-4 py-8">
+    <section class="relative overflow-hidden">
+      <div class="container mx-auto px-4 py-8 relative">
         <div class="flex flex-col-reverse lg:flex-row lg:items-center lg:justify-between">
-
           <!-- Text and Input Fields -->
-          <div class="w-full lg:w-1/2 mt-6 lg:mt-0">
+          <div class="w-full lg:w-1/2 mt-6 lg:mt-0 z-20 relative">
             <h1 class="text-4xl pb-4 lg:pb-6 font-bold text-gray-900 sm:text-5xl">
               Where you find the right company
             </h1>
@@ -120,12 +119,15 @@
               </button>
             </div>
           </div>
-
-          <!-- Image -->
-          <div class="w-full lg:w-1/2">
-            <img src="images/Vector.png" alt="Business person working" class="rounded-lg w-full">
+    
+          <!-- Image Container -->
+          <div class="w-full lg:w-1/2 relative">
+            <img src="images/Vector.png" alt="Business person working" class="rounded-lg w-full relative z-10">
+            <!-- Gray Arrow Overlay -->
+            <div class="absolute -top-10 -left-52 z-20">
+              <img src="images/gray-arrow.png" alt="">
+            </div>
           </div>
-
         </div>
       </div>
     </section>
@@ -870,86 +872,93 @@
     <section>
       <div class="my-16 relative flex overflow-x-hidden bg-[#EEEEEE]">
         <div class="py-12 animate-infinite-scroll flex space-x-12 sm:space-x-16 md:space-x-24 lg:space-x-32">
-            <img src="images/Gong.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="Gong">
-            <img src="images/automattic.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="Automattic">
-            <img src="images/Hashicorp.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="Hashicorp">
-            <img src="images/activecampaign.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="ActiveCampaign">
-            <img src="images/evernote.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="Evernote">
-            <img src="images/pipedrive.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="Pipedrive">
-            <img src="images/Airwales.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="Airwallex">
+          <img src="images/Gong.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="Gong">
+          <img src="images/automattic.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="Automattic">
+          <img src="images/Hashicorp.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="Hashicorp">
+          <img src="images/activecampaign.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="ActiveCampaign">
+          <img src="images/evernote.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="Evernote">
+          <img src="images/pipedrive.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="Pipedrive">
+          <img src="images/Airwales.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="Airwallex">
         </div>
         <div class="py-12 animate-infinite-scroll flex space-x-12 sm:space-x-16 md:space-x-24 lg:space-x-32">
-            <img src="images/Gong.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="Gong">
-            <img src="images/automattic.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="Automattic">
-            <img src="images/Hashicorp.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="Hashicorp">
-            <img src="images/activecampaign.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="ActiveCampaign">
-            <img src="images/evernote.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="Evernote">
-            <img src="images/pipedrive.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="Pipedrive">
-            <img src="images/Airwales.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="Airwallex">
+          <img src="images/Gong.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="Gong">
+          <img src="images/automattic.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="Automattic">
+          <img src="images/Hashicorp.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="Hashicorp">
+          <img src="images/activecampaign.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="ActiveCampaign">
+          <img src="images/evernote.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="Evernote">
+          <img src="images/pipedrive.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="Pipedrive">
+          <img src="images/Airwales.png" class="h-8 sm:h-12 lg:h-16 w-auto max-w-none" alt="Airwallex">
         </div>
-    </div>
-  </section>
+      </div>
+    </section>
 
     <!-- Clients  -->
     <section class="bg-white py-12 px-4 sm:px-6 lg:px-8">
       <div class="max-w-7xl mx-auto">
-          <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-8 text-center">
-              What Our Clients Say
-          </h2>
-          <div class="review-grid grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              <!-- Review 1 -->
-              <div class="bg-[#EEEEEE] rounded-lg shadow-md overflow-hidden">
-                  <div class="p-6">
-                      <div class="flex items-center mb-4">
-                          <img class="h-12 w-12 rounded-full mr-4" src="images/review1.png" alt="Janis Reeves">
-                          <div>
-                              <h3 class="text-lg font-semibold text-gray-900">Janis Reeves</h3>
-                              <p class="text-sm text-gray-600">Coala</p>
-                          </div>
-                      </div>
-                      <div class="flex text-yellow-400 mb-2">
-                          ★★★★<span class="text-gray-300">★</span>
-                      </div>
-                      <p class="text-gray-700">As a small business owner, finding the right partners for various projects has always been a challenge. This website has been a game-changer! The categorization makes it easy to find exactly what you're looking for, and the quality of professionals listed is top-notch.</p>
-                  </div>
+        <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-8 text-center">
+          What Our Clients Say
+        </h2>
+        <div class="review-grid grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <!-- Review 1 -->
+          <div class="bg-[#EEEEEE] rounded-lg shadow-md overflow-hidden">
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <img class="h-12 w-12 rounded-full mr-4" src="images/review1.png" alt="Janis Reeves">
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-900">Janis Reeves</h3>
+                  <p class="text-sm text-gray-600">Coala</p>
+                </div>
               </div>
-
-              <!-- Review 2 -->
-              <div class="bg-[#EEEEEE] rounded-lg shadow-md overflow-hidden">
-                  <div class="p-6">
-                      <div class="flex items-center mb-4">
-                          <img class="h-12 w-12 rounded-full mr-4" src="images/review2.png" alt="Francis Guzman">
-                          <div>
-                              <h3 class="text-lg font-semibold text-gray-900">Francis Guzman</h3>
-                              <p class="text-sm text-gray-600">Metademy</p>
-                          </div>
-                      </div>
-                      <div class="flex text-yellow-400 mb-2">
-                          ★★★★★
-                      </div>
-                      <p class="text-gray-700">As a marketing consultant, I often need to bring in specialists for various projects. Whether I need a graphic designer, a content writer, or a SEO expert, I can always find high-quality professionals here. The platform is user-friendly and has saved me countless hours of searching and vetting.</p>
-                  </div>
+              <div class="flex text-yellow-400 mb-2">
+                ★★★★<span class="text-gray-300">★</span>
               </div>
-
-              <!-- Review 3 -->
-              <div class="bg-[#EEEEEE] rounded-lg shadow-md overflow-hidden">
-                  <div class="p-6">
-                      <div class="flex items-center mb-4">
-                          <img class="h-12 w-12 rounded-full mr-4" src="images/review1.png" alt="Arthur Morgan">
-                          <div>
-                              <h3 class="text-lg font-semibold text-gray-900">Arthur Morgan</h3>
-                              <p class="text-sm text-gray-600">Outlaw</p>
-                          </div>
-                      </div>
-                      <div class="flex text-yellow-400 mb-2">
-                          ★★★★<span class="text-gray-300">★</span>
-                      </div>
-                      <p class="text-gray-700">I'm amazed by the range of services available on this platform! As someone working in the creative industry, I've used it to find everything from UX designers to video production teams. It's like having a rolodex of top-tier professionals at your fingertips.</p>
-                  </div>
-              </div>
+              <p class="text-gray-700">As a small business owner, finding the right partners for various projects has
+                always been a challenge. This website has been a game-changer! The categorization makes it easy to find
+                exactly what you're looking for, and the quality of professionals listed is top-notch.</p>
+            </div>
           </div>
+
+          <!-- Review 2 -->
+          <div class="bg-[#EEEEEE] rounded-lg shadow-md overflow-hidden">
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <img class="h-12 w-12 rounded-full mr-4" src="images/review2.png" alt="Francis Guzman">
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-900">Francis Guzman</h3>
+                  <p class="text-sm text-gray-600">Metademy</p>
+                </div>
+              </div>
+              <div class="flex text-yellow-400 mb-2">
+                ★★★★★
+              </div>
+              <p class="text-gray-700">As a marketing consultant, I often need to bring in specialists for various
+                projects. Whether I need a graphic designer, a content writer, or a SEO expert, I can always find
+                high-quality professionals here. The platform is user-friendly and has saved me countless hours of
+                searching and vetting.</p>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="bg-[#EEEEEE] rounded-lg shadow-md overflow-hidden">
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <img class="h-12 w-12 rounded-full mr-4" src="images/review1.png" alt="Arthur Morgan">
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-900">Arthur Morgan</h3>
+                  <p class="text-sm text-gray-600">Outlaw</p>
+                </div>
+              </div>
+              <div class="flex text-yellow-400 mb-2">
+                ★★★★<span class="text-gray-300">★</span>
+              </div>
+              <p class="text-gray-700">I'm amazed by the range of services available on this platform! As someone
+                working in the creative industry, I've used it to find everything from UX designers to video production
+                teams. It's like having a rolodex of top-tier professionals at your fingertips.</p>
+            </div>
+          </div>
+        </div>
       </div>
-  </section>
+    </section>
   </main>
 
 

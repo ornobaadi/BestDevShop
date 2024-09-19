@@ -42,15 +42,14 @@
 
 <body class="font-poppins">
   <!-- Header Section  -->
-  <header>
+  <header class="fixed top-0 left-0 right-0 z-50">
     <nav>
       <div class="navbar bg-[#EEEEEE] p-3 px-8 lg:px-16">
-
         <!-- Logo Section -->
         <div class="flex-1">
           <img class="h-10 cursor-pointer flex-none" src="images/Logo.png" alt="Logo">
         </div>
-
+  
         <!-- Menu for large screens -->
         <div class="hidden lg:flex">
           <ul class="font-medium text-lg menu menu-horizontal px-1">
@@ -63,7 +62,7 @@
             <li><a>Resources</a></li>
           </ul>
         </div>
-
+  
         <!-- Hamburger Menu for mobile screens -->
         <div class="dropdown dropdown-end lg:hidden">
           <div tabindex="0" role="button" class="btn btn-ghost">
@@ -72,7 +71,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path>
             </svg>
           </div>
-          <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+          <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[60] mt-3 w-52 p-2 shadow">
             <li><a>Development</a></li>
             <li><a>IT Services</a></li>
             <li><a>Marketing</a></li>
@@ -82,15 +81,12 @@
             <li><a>Resources</a></li>
           </ul>
         </div>
-
       </div>
     </nav>
   </header>
-
-
-
+  
   <!-- Main Section  -->
-  <main>
+  <main class="pt-16"> <!-- Add padding-top to account for fixed header -->
     <!-- Banner Section  -->
     <section class="relative overflow-hidden">
       <div class="container mx-auto px-4 py-8 relative">
